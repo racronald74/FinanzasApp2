@@ -77,8 +77,12 @@ import com.example.finanzasapp2.ui.screens.ingresos.FormularioIngreso
 import com.example.finanzasapp2.ui.theme.FinanzasApp2Theme
 import com.example.finanzasapp2.viewmodel.FinanzasViewModel
 import com.example.finanzasapp2.ui.components.HeaderFinanzas
+import com.example.finanzasapp2.ui.components.EmptyState
+
 import java.text.NumberFormat
 import java.util.Locale
+
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 
 enum class Pantalla {
     INGRESOS,
@@ -88,6 +92,9 @@ enum class Pantalla {
 class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        installSplashScreen()
+
         super.onCreate(savedInstanceState)
 
         window.statusBarColor = android.graphics.Color.rgb(70, 118, 184)
@@ -96,24 +103,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
 
         setContent {
-
-            var mostrarSplash by remember {
-                mutableStateOf(true)
-            }
-
-            if (mostrarSplash) {
-
-                SplashScreen(
-                    onFinished = {
-                        mostrarSplash = false
-                    }
-                )
-
-            } else {
-
-                FinanzasApp()
-
-            }
+            FinanzasApp()
         }
     }
 }
@@ -630,9 +620,12 @@ fun PantallaIngresos(
 
             if (ingresos.isEmpty()) {
 
-                Text(
-                    text = "No hay ingresos registrados."
-                )
+                if (ingresos.isEmpty()) {
+                    EmptyState(
+                        titulo = "No hay ingresos registrados",
+                        mensaje = "Registra tu primer ingreso para comenzar a controlar tus finanzas."
+                    )
+                }
 
             } else {
 
@@ -863,9 +856,12 @@ fun PantallaGastos(
 
             if (gastos.isEmpty()) {
 
-                Text(
-                    text = "No hay gastos registrados."
-                )
+                if (gastos.isEmpty()) {
+                    EmptyState(
+                        titulo = "No hay gastos registrados",
+                        mensaje = "Registra tu primer gasto para comenzar a controlar tus finanzas."
+                    )
+                }
 
             } else {
 

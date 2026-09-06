@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.FinanzasApp2" parent="android:Theme.Material.Light.NoActionBar" />
+    <!-- Tema que utiliza el sistema mientras inicia la aplicación -->
+    <style name="Theme.FinanzasApp2.Starting"
+        parent="Theme.SplashScreen">
+
+        <item name="windowSplashScreenBackground">@color/splash_background</item>
+
+        <item name="windowSplashScreenAnimatedIcon">@drawable/logo_2</item>
+
+        <item name="postSplashScreenTheme">@style/Theme.FinanzasApp2</item>
+
+    </style>
+
+    <!-- Tema normal de la aplicación -->
+    <style name="Theme.FinanzasApp2"
+        parent="android:style/Theme.Material.Light.NoActionBar">
+
+    </style>
+
 </resources>
