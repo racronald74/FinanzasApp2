@@ -63,6 +63,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 
 import com.example.finanzasapp2.ui.screens.SplashScreen
 import androidx.room.Room
@@ -576,7 +577,8 @@ fun PantallaIngresos(
 
                     Text(
                         text = "Resumen de ingresos",
-                        style = MaterialTheme.typography.titleLarge
+                        style = MaterialTheme.typography.titleLarge,
+                        fontWeight = FontWeight.Bold
                     )
 
                     Spacer(
@@ -589,7 +591,9 @@ fun PantallaIngresos(
 
                     Text(
                         text = formatearDinero(totalIngresos),
-                        style = MaterialTheme.typography.headlineSmall
+                        style = MaterialTheme.typography.headlineSmall,
+                        fontWeight = FontWeight.Bold,
+                        color = Color(0xFF4CAF50)
                     )
 
                     Spacer(
@@ -602,7 +606,9 @@ fun PantallaIngresos(
 
                     Text(
                         text = formatearDinero(saldoDisponible),
-                        style = MaterialTheme.typography.titleLarge
+                        style = MaterialTheme.typography.titleLarge,
+                        fontWeight = FontWeight.Bold,
+                        color = Color(0xFF4CAF50)
                     )
                 }
             }
@@ -611,11 +617,12 @@ fun PantallaIngresos(
                 modifier = Modifier.height(15.dp)
             )
 
-        Text(
-            text = "Historial de ingresos",
-            style = MaterialTheme.typography.titleLarge,
-            modifier = Modifier.padding(horizontal = 12.dp)
-        )
+            Text(
+                text = "Historial de ingresos",
+                style = MaterialTheme.typography.titleLarge,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.padding(horizontal = 12.dp)
+            )
 
             Spacer(
                 modifier = Modifier.height(8.dp)
@@ -807,7 +814,8 @@ fun PantallaGastos(
 
                     Text(
                         text = "Resumen de gastos",
-                        style = MaterialTheme.typography.titleLarge
+                        style = MaterialTheme.typography.titleLarge,
+                        fontWeight = FontWeight.Bold
                     )
 
                     Spacer(
@@ -818,7 +826,9 @@ fun PantallaGastos(
 
                     Text(
                         text = formatearDinero(totalGastos),
-                        style = MaterialTheme.typography.headlineSmall
+                        style = MaterialTheme.typography.headlineSmall,
+                        fontWeight = FontWeight.Bold,
+                        color = Color(0xFFF44336)
                     )
 
                     Spacer(
@@ -829,7 +839,9 @@ fun PantallaGastos(
 
                     Text(
                         text = formatearDinero(saldoDisponible),
-                        style = MaterialTheme.typography.titleLarge
+                        style = MaterialTheme.typography.titleLarge,
+                        fontWeight = FontWeight.Bold,
+                        color = Color(0xFF4CAF50)
                     )
                 }
             }
@@ -841,6 +853,7 @@ fun PantallaGastos(
             Text(
                 text = "Lista de gastos",
                 style = MaterialTheme.typography.titleLarge,
+                fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(horizontal = 12.dp)
             )
 
